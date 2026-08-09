@@ -1,5 +1,5 @@
 # Fault-associated ETAS networks
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21860394.svg)](https://doi.org/10.5281/zenodo.21860394)
 This repository provides a compact, reproducible implementation of the
 fault-associated earthquake-network framework developed for the accompanying
 manuscript. Event-pair probabilities from a space-time ETAS model are
@@ -126,13 +126,14 @@ licenses and are not covered by the software license. See
 Citation metadata are provided in [`CITATION.cff`](CITATION.cff).
 
 Suggested software citation:
-
+> Ge, L. (2026). Fault-associated ETAS networks (Version 1.0.1)
+> [Software]. Zenodo. https://doi.org/10.5281/zenodo.21860394
 
 
 ## Development and archived versions
 
 - Development repository: `https://github.com/LingfeiGe-UCAS/ETAS-network`
-- Archived release: A version-specific Zenodo DOI will be added after archival.
+- Archived release: `https://doi.org/10.5281/zenodo.21860394`
 
 Please open an issue for reproducibility problems and include the software
 version, operating system, Python version, configuration file, and random seed.
