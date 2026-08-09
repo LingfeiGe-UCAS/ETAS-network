@@ -132,7 +132,7 @@ Suggested software citation:
 
 ## Development and archived versions
 
-- Development repository: `https://github.com/USERNAME/fault-associated-etas-networks`
+- Development repository: `https://github.com/LingfeiGe-UCAS/ETAS-network`
 - Archived release: `https://doi.org/10.5281/zenodo.TODO`
 
 Please open an issue for reproducibility problems and include the software

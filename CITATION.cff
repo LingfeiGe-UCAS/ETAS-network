@@ -7,12 +7,14 @@ date-released: 2026-08-08
 authors:
   - family-names: "Ge"
     given-names: "Lingfei"
+    email: "gelingfei22@mails.ucas.ac.cn"
+    orcid: "https://orcid.org/0009-0002-8792-9447"
+    affiliation: "University of Chinese Academy of Sciences"
 license: MIT
-repository-code: "https://github.com/USERNAME/fault-associated-etas-networks"
+repository-code: "https://github.com/LingfeiGe-UCAS/ETAS-network"
 keywords:
   - earthquake networks
   - ETAS
   - fault systems
   - community detection
   - seismicity
-# Add the Zenodo DOI and the accepted article under preferred-citation before release.
