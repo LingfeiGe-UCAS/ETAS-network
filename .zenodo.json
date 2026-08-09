@@ -1,0 +1,16 @@
+{
+  "title": "Fault-associated ETAS networks",
+  "description": "Code for constructing and analyzing directed weighted earthquake networks by aggregating event-pair ETAS probabilities onto persistent fault-associated spatial cells.",
+  "creators": [
+    {"name": "Ge, Lingfei"}
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "keywords": [
+    "earthquake networks",
+    "ETAS",
+    "fault systems",
+    "community detection",
+    "seismicity"
+  ]
+}

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the archived release and the associated article."
+title: "Fault-associated ETAS networks"
+type: software
+version: 1.0.0
+date-released: 2026-08-08
+authors:
+  - family-names: "Ge"
+    given-names: "Lingfei"
+license: MIT
+repository-code: "https://github.com/USERNAME/fault-associated-etas-networks"
+keywords:
+  - earthquake networks
+  - ETAS
+  - fault systems
+  - community detection
+  - seismicity
+# Add the Zenodo DOI and the accepted article under preferred-citation before release.

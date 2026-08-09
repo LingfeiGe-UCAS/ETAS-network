@@ -1,0 +1,17 @@
+network:
+  cumulative_triggering_threshold: 0.001
+  cell_edge_threshold: 0.0
+community:
+  resolutions: [0.5, 1.0]
+  seed: 42
+cascade:
+  probability_threshold: 0.1
+  source_magnitude: 5.0
+  minimum_source_community_nodes: 1
+temporal_holdout:
+  training_fraction: 0.7
+null_models:
+  realizations: 2
+  distance_bins: 2
+  swaps_per_edge: 1
+  seed: 42
