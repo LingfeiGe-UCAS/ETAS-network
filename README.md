@@ -105,9 +105,12 @@ earlier catalog interval and evaluate the two null models with later cascades.
 - **Smoke test:** the bundled synthetic example runs in seconds.
 - **Observed regional analysis:** prepared ETAS probability and cell-assignment
   inputs reproduce network, community, and retention summaries.
-- **Full paper reproduction:** licensed inputs, null-model ensembles, and figure
-  source tables are deposited separately on Zenodo to avoid placing large or
-  restricted files in GitHub.
+- **Paper-level analysis:** prepared ETAS probabilities and event-to-cell
+  assignments can be used to reproduce the principal network, community,
+  null-model, and cascade-retention calculations.
+- **Complete figure reproduction:** regional inputs and figure-source tables
+  will be archived separately, subject to the licenses of the original data
+  providers.
 
 See [`docs/reproducibility.md`](docs/reproducibility.md) for details.
 
