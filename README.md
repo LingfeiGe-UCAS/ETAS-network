@@ -120,20 +120,16 @@ licenses and are not covered by the software license. See
 
 ## Citation
 
-Citation metadata are provided in [`CITATION.cff`](CITATION.cff). Before the
-first public release, replace the placeholder GitHub account, add all software
-authors and ORCID identifiers, archive release `v1.0.0` with Zenodo, and insert
-the resulting DOI into both files.
+Citation metadata are provided in [`CITATION.cff`](CITATION.cff).
 
 Suggested software citation:
 
-> Ge, L. (2026). Fault-associated ETAS networks (Version 1.0.0) [Software].
-> Zenodo. https://doi.org/10.5281/zenodo.TODO
+
 
 ## Development and archived versions
 
 - Development repository: `https://github.com/LingfeiGe-UCAS/ETAS-network`
-- Archived release: `https://doi.org/10.5281/zenodo.TODO`
+- Archived release: A version-specific Zenodo DOI will be added after archival.
 
 Please open an issue for reproducibility problems and include the software
 version, operating system, Python version, configuration file, and random seed.

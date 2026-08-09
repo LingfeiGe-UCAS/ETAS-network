@@ -8,7 +8,10 @@
       "orcid": "0009-0002-8792-9447"
     }
   ],
-  "license": "MIT",
+  "version": "1.0.0",
+  "access_right": "open",
+  "language": "eng",
+  "license": "mit",
   "upload_type": "software",
   "keywords": [
     "earthquake networks",
