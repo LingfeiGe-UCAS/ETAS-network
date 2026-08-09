@@ -1,8 +1,0 @@
-# GMT 6 Session common arguments shelf
-BEGIN GMT 6.4.0
-B	a1f1WSen+tshanxi seismic Map
-J	M
-JM	M105/35/10c
-R	110.0/115.0/34.0/41.0@earth_relief_02m
-@L	1
-END
