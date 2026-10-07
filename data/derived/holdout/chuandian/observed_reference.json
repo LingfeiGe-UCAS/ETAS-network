@@ -1,0 +1,80 @@
+{
+  "best": [
+    {
+      "eta": 0.1,
+      "louvain_seed": 17,
+      "Q": 0.9959857102686587,
+      "communities": 77,
+      "retention": 0.9443099273607748,
+      "downstream_retention": 0.9429280397022333,
+      "memberships": 413,
+      "downstream_memberships": 403,
+      "same": 390,
+      "downstream_same": 380
+    },
+    {
+      "eta": 0.5,
+      "louvain_seed": 14,
+      "Q": 0.986919595305003,
+      "communities": 107,
+      "retention": 0.9200968523002422,
+      "downstream_retention": 0.9181141439205955,
+      "memberships": 413,
+      "downstream_memberships": 403,
+      "same": 380,
+      "downstream_same": 370
+    },
+    {
+      "eta": 1.0,
+      "louvain_seed": 1,
+      "Q": 0.9765828159209773,
+      "communities": 117,
+      "retention": 0.9200968523002422,
+      "downstream_retention": 0.9181141439205955,
+      "memberships": 413,
+      "downstream_memberships": 403,
+      "same": 380,
+      "downstream_same": 370
+    },
+    {
+      "eta": 1.5,
+      "louvain_seed": 9,
+      "Q": 0.9665615632816736,
+      "communities": 122,
+      "retention": 0.9200968523002422,
+      "downstream_retention": 0.9181141439205955,
+      "memberships": 413,
+      "downstream_memberships": 403,
+      "same": 380,
+      "downstream_same": 370
+    },
+    {
+      "eta": 2.0,
+      "louvain_seed": 15,
+      "Q": 0.956599602819429,
+      "communities": 124,
+      "retention": 0.9200968523002422,
+      "downstream_retention": 0.9181141439205955,
+      "memberships": 413,
+      "downstream_memberships": 403,
+      "same": 380,
+      "downstream_same": 370
+    },
+    {
+      "eta": 3.0,
+      "louvain_seed": 12345,
+      "Q": 0.936758690568698,
+      "communities": 131,
+      "retention": 0.9200968523002422,
+      "downstream_retention": 0.9181141439205955,
+      "memberships": 413,
+      "downstream_memberships": 403,
+      "same": 380,
+      "downstream_same": 370
+    }
+  ],
+  "diagnostics": {
+    "C": 0.3999319031526084,
+    "Cw": 0.0064868671004726765
+  }
+}

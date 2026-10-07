@@ -1,0 +1,80 @@
+{
+  "best": [
+    {
+      "eta": 0.1,
+      "louvain_seed": 5,
+      "Q": 0.9951896838295516,
+      "communities": 108,
+      "retention": 1.0,
+      "downstream_retention": 1.0,
+      "memberships": 57,
+      "downstream_memberships": 51,
+      "same": 57,
+      "downstream_same": 51
+    },
+    {
+      "eta": 0.5,
+      "louvain_seed": 12345,
+      "Q": 0.9825872227308208,
+      "communities": 124,
+      "retention": 1.0,
+      "downstream_retention": 1.0,
+      "memberships": 57,
+      "downstream_memberships": 51,
+      "same": 57,
+      "downstream_same": 51
+    },
+    {
+      "eta": 1.0,
+      "louvain_seed": 9,
+      "Q": 0.9699632467432291,
+      "communities": 133,
+      "retention": 1.0,
+      "downstream_retention": 1.0,
+      "memberships": 57,
+      "downstream_memberships": 51,
+      "same": 57,
+      "downstream_same": 51
+    },
+    {
+      "eta": 1.5,
+      "louvain_seed": 5,
+      "Q": 0.9589148321965437,
+      "communities": 139,
+      "retention": 1.0,
+      "downstream_retention": 1.0,
+      "memberships": 57,
+      "downstream_memberships": 51,
+      "same": 57,
+      "downstream_same": 51
+    },
+    {
+      "eta": 2.0,
+      "louvain_seed": 12345,
+      "Q": 0.9482884578693167,
+      "communities": 143,
+      "retention": 1.0,
+      "downstream_retention": 1.0,
+      "memberships": 57,
+      "downstream_memberships": 51,
+      "same": 57,
+      "downstream_same": 51
+    },
+    {
+      "eta": 3.0,
+      "louvain_seed": 15,
+      "Q": 0.9271571192379408,
+      "communities": 148,
+      "retention": 1.0,
+      "downstream_retention": 1.0,
+      "memberships": 57,
+      "downstream_memberships": 51,
+      "same": 57,
+      "downstream_same": 51
+    }
+  ],
+  "diagnostics": {
+    "C": 0.3458447484630057,
+    "Cw": 0.006022523483790627
+  }
+}

@@ -1,139 +1,105 @@
-# Fault-associated ETAS networks
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21860394.svg)](https://doi.org/10.5281/zenodo.21860394)
-This repository provides a compact, reproducible implementation of the
-fault-associated earthquake-network framework developed for the accompanying
-manuscript. Event-pair probabilities from a space-time ETAS model are
-aggregated onto persistent spatial cells associated with mapped fault systems.
-The resulting directed weighted networks support structural, community,
-null-model, and cascade-retention analyses.
+# Fault-centric ETAS networks
 
-The public repository contains only the final analysis workflow. Raw catalogs,
-third-party fault files, manuscript documents, exploratory scripts, and large
-simulation outputs are deliberately excluded.
+Version 1.1.0 — submission update.
 
-## Scientific workflow
+Code and derived network data accompanying **Fault-Centric ETAS Networks Link
+Event-Level Earthquake Dependence to Mesoscale Spatial Organization**.
 
-1. Aggregate event-pair probabilities onto fault-associated cells.
-2. Normalize outgoing cell weights by the number of events in each source cell.
-3. Construct the directed network and its weighted symmetrized projection.
-4. Calculate heterogeneity, clustering, and assortative-mixing statistics.
-5. Detect Louvain communities across resolution parameters.
-6. Compare observations with degree-preserving and spatially constrained nulls.
-7. Measure whether recursively connected event sequences remain in the source
-   community, including temporal-holdout applications.
+Event-pair ETAS probabilities are aggregated onto fault-associated cells.
+Cumulative contributions are thresholded before source-event normalization.
+Directed networks retain self-loops; clustering, communities and rewiring use
+the loop-free weighted projection W + W.T.
 
-## Installation
+## Install
 
-Using Conda:
+Python 3.10 or newer:
 
 ```bash
-conda env create -f environment.yml
-conda activate fault-etas-network
-```
-
-Or using an existing Python 3.10 or newer environment:
-
-```bash
-python -m pip install -e .
-```
-
-## Quick verification
-
-The bundled data are synthetic and are intended only to verify the workflow.
-
-```bash
+python -m pip install -e ".[test]"
+python -m pytest -q
 python scripts/run_example.py
 ```
 
-The command writes a directed network and a compact JSON summary to
-`results/example/`. Run the tests with:
+For the archived manuscript calculations use NetworkX 3.1. Other versions may
+change Louvain partitions even with identical seeds. Optional Numba accelerates
+rewiring substantially: `python -m pip install numba`.
+Without it the same kernel runs in Python but large ensembles will be slow.
+
+## Verify the manuscript's derived networks
+
+The package includes eight derived networks (full and training-period networks
+for Shanxi, Italy, Chuan–Dian and Southern California), frozen holdout memberships,
+and final RW40/SR640 reference tables. INGV is the internal directory name for Italy.
 
 ```bash
-python -m pytest
+python scripts/verify_reference.py
+python scripts/run_archived_graph.py data/derived/holdout/INGV --output results/check_italy
 ```
 
-## Analyze prepared regional data
+The verification compares all 48 observed modularity/community results and the
+24 downstream-retention results against the saved final experiments.
 
-Prepare `events.csv`, `event_pairs.csv`, and `cells.csv` as described in
-[`docs/data_format.md`](docs/data_format.md), then run:
+To regenerate null realizations for a derived graph:
 
 ```bash
-python scripts/run_paper_analysis.py data/private/REGION \
-  --config configs/paper.yaml \
-  --output results/REGION
+python scripts/run_archived_graph.py data/derived/full/INGV --realizations 200 --output results/italy_null
 ```
 
-`configs/paper.yaml` records the principal thresholds, community resolutions,
-null-ensemble settings, and random seed used in the manuscript. The lightweight
-regional entry point produces observed network, community, and retention
-results. The null-model functions can be imported from
-`fault_etas_network.null_models` for full ensembles.
+This can take substantial time. The command is serial and does not automatically
+occupy all CPU cores. Existing reference tables are under `results/reference/`.
+See [reproducibility notes](docs/reproducibility.md) before claiming exact reproduction.
 
-For the nonoverlapping temporal evaluation, run:
+## Analyze new prepared inputs
+
+Prepare the CSV files described in [data format](docs/data_format.md). ETAS fitting,
+distance-to-fault calculation and assignment to 6 km fault-associated cells take
+place upstream. If events.csv includes fault_distance_km, the commands enforce
+the configured 18 km limit before network aggregation. Without that column,
+--prefiltered is required to confirm that upstream processing already applied it.
+Screening does not remove catalog rows, change event IDs, or refit ETAS.
 
 ```bash
-python scripts/run_temporal_holdout.py data/private/REGION \
-  --config configs/paper.yaml \
-  --output results/REGION/temporal_holdout.json
+python scripts/run_paper_analysis.py data/private/REGION --output results/REGION
+python scripts/run_temporal_holdout.py data/private/REGION --output results/REGION/holdout
+python scripts/run_null_ensembles.py data/private/REGION --temporal-holdout --realizations 200 --output results/REGION/holdout_null
 ```
 
-The two rewiring ensembles can be reproduced with:
+All `--output` arguments now designate directories, not JSON filenames.
+Use `--fixed-memberships PATH` to supply a saved sample with matching event/node IDs.
+Otherwise eligibility is determined once per resolution using the original
+audit seed (12345), then frozen before best-of-20 evaluation and all null runs.
 
-```bash
-python scripts/run_null_ensembles.py data/private/REGION \
-  --config configs/paper.yaml \
-  --output results/REGION/null_ensembles.csv
-```
+## Final analysis settings
 
-Use `--realizations 2` for a quick diagnostic; the paper configuration uses
-200 realizations. Add `--temporal-holdout` to construct communities from the
-earlier catalog interval and evaluate the two null models with later cascades.
+- Cumulative cell-pair threshold: 0.001; downstream probability threshold: 0.1.
+- Resolutions: 0.1, 0.5, 1, 1.5, 2, 3.
+- Louvain seeds: 12345, then 1–19; highest Q retained, first run on exact ties.
+- Each null starts from the observed graph: 200 realizations per model.
+- M_RW: 40 accepted swaps per edge, followed by global weight permutation.
+- M_SR: 640 accepted swaps per edge; 10 equal-frequency distance bins;
+  weights retain their distance-bin affiliation during swaps.
+- Rejected proposals do not count. Unmet swap budgets raise an error.
+- Retention excludes each source itself, uses fixed downstream memberships,
+  and does not reapply the community-size criterion to randomized partitions.
+- Null summaries report means, central 95% intervals and plus-one tail probabilities.
 
-## Repository map
+Increasing swap counts was checked in the research workflow; these settings are
+not a mathematical proof of uniform mixing. The nulls do not preserve node strengths.
 
-| Path | Purpose |
-|---|---|
-| `src/fault_etas_network/` | Reusable scientific implementation |
-| `scripts/` | Executable example and regional-analysis entry points |
-| `configs/paper.yaml` | Versioned manuscript parameters |
-| `data/example/` | Small synthetic smoke-test data |
-| `tests/` | Tests of the main mathematical operations |
-| `docs/` | Input schema and reproducibility guidance |
+## Scope and licensing
 
-## Reproducibility levels
+The code is MIT licensed; bundled synthetic data are CC0. Raw earthquake catalogs,
+third-party fault traces, manuscript documents, credentials and exploratory outputs
+are not included. Derived graph positions are cell locations, not raw fault traces.
+No blanket relicensing of third-party source data is implied.
+See [data notes](data/README.md) and [changes](CHANGELOG.md).
 
-- **Smoke test:** the bundled synthetic example runs in seconds.
-- **Observed regional analysis:** prepared ETAS probability and cell-assignment
-  inputs reproduce network, community, and retention summaries.
-- **Paper-level analysis:** prepared ETAS probabilities and event-to-cell
-  assignments can be used to reproduce the principal network, community,
-  null-model, and cascade-retention calculations.
-- **Complete figure reproduction:** regional inputs and figure-source tables
-  will be archived separately, subject to the licenses of the original data
-  providers.
+## Citation and archive
 
-See [`docs/reproducibility.md`](docs/reproducibility.md) for details.
+Development: https://github.com/LingfeiGe-UCAS/ETAS-network
 
-## Data and licensing
+Previous published version (1.0.1): https://doi.org/10.5281/zenodo.21860394
 
-The software is released under the MIT License. The synthetic example data are
-CC0. Third-party earthquake catalogs and fault databases retain their original
-licenses and are not covered by the software license. See
-[`data/README.md`](data/README.md) before depositing regional inputs.
-
-## Citation
-
-Citation metadata are provided in [`CITATION.cff`](CITATION.cff).
-
-Suggested software citation:
-> Ge, L. (2026). Fault-associated ETAS networks (Version 1.0.1)
-> [Software]. Zenodo. https://doi.org/10.5281/zenodo.21860394
-
-
-## Development and archived versions
-
-- Development repository: `https://github.com/LingfeiGe-UCAS/ETAS-network`
-- Archived release: `https://doi.org/10.5281/zenodo.21860394`
-
-Please open an issue for reproducibility problems and include the software
-version, operating system, Python version, configuration file, and random seed.
+**The 1.1.0 archive DOI has not yet been assigned.** Do not cite the previous DOI
+as if it identifies this update. After archiving, insert the new version DOI and
+publication date into CITATION.cff and update the manuscript's availability statement.

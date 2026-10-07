@@ -73,7 +73,7 @@ def build_directed_graph(
     positions: np.ndarray | None = None,
     event_counts: np.ndarray | None = None,
     edge_threshold: float = 0.0,
-    remove_self_loops: bool = True,
+    remove_self_loops: bool = False,
 ) -> nx.DiGraph:
     """Create a NetworkX directed graph from a cell-weight matrix."""
     matrix = sparse.coo_matrix(weights)

@@ -1,0 +1,58 @@
+[
+  {
+    "scope": "full",
+    "region": "shanxi",
+    "original_graph_sha256": "fcc435b707235078c3485f28f8d7a11932330d71040a1f972a5000ce899e4597",
+    "nodes": 461,
+    "edges": 4201
+  },
+  {
+    "scope": "full",
+    "region": "INGV",
+    "original_graph_sha256": "792e1bf78a3017c88ff5b683c1bc6fa727447fe20ae09007195c6c80e9678bc7",
+    "nodes": 1162,
+    "edges": 2919
+  },
+  {
+    "scope": "full",
+    "region": "chuandian",
+    "original_graph_sha256": "e76feefc1b46dd87f17152951d8bbf606627d301edf67088efdee4701faae867",
+    "nodes": 1076,
+    "edges": 2633
+  },
+  {
+    "scope": "full",
+    "region": "southern_california",
+    "original_graph_sha256": "10684b383afaa2bb41e0baecbad5e1f229ee31c6a186a9337fe87817f62c7a82",
+    "nodes": 1261,
+    "edges": 9422
+  },
+  {
+    "scope": "holdout",
+    "region": "shanxi",
+    "original_graph_sha256": "62cb7c1dc2b7938eb9b887305a6bb52f9f0b9792e75937f693b6a5cad6d99660",
+    "nodes": 397,
+    "edges": 3807
+  },
+  {
+    "scope": "holdout",
+    "region": "INGV",
+    "original_graph_sha256": "1403836f9c4de305edaf741c56b0d100f98f018cfaa8641f23d8690e4def342c",
+    "nodes": 824,
+    "edges": 1694
+  },
+  {
+    "scope": "holdout",
+    "region": "chuandian",
+    "original_graph_sha256": "801c95e5b99d798ea4a0154fc6be40eca50816c1ba26bd8114386c11924dceb9",
+    "nodes": 863,
+    "edges": 1871
+  },
+  {
+    "scope": "holdout",
+    "region": "southern_california",
+    "original_graph_sha256": "7b890e2075df7817d2f963aabfe16cdd2fdbbfd2b985dbc85dcbe6ffe3afe485",
+    "nodes": 1130,
+    "edges": 9136
+  }
+]

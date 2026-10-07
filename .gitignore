@@ -11,6 +11,8 @@ venv/
 Thumbs.db
 results/*
 !results/README.md
+!results/reference/
+!results/reference/**
 data/private/
 data/raw/
 *.pkl

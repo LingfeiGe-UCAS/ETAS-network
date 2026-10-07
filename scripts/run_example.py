@@ -46,7 +46,7 @@ def main() -> None:
 
     null_rw = rewire_degree_preserving(graph, swaps_per_edge=1, seed=42)
     null_sr = rewire_spatially_constrained(
-        graph, n_distance_bins=2, swaps_per_edge=0.25, seed=42
+        graph, n_distance_bins=1, swaps_per_edge=0.25, seed=42
     )
     summary = {
         "network": summarize_graph(graph),

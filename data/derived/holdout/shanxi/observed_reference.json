@@ -1,0 +1,80 @@
+{
+  "best": [
+    {
+      "eta": 0.1,
+      "louvain_seed": 15,
+      "Q": 0.9637580649950594,
+      "communities": 8,
+      "retention": 0.8611111111111112,
+      "downstream_retention": 0.8387096774193549,
+      "memberships": 36,
+      "downstream_memberships": 31,
+      "same": 31,
+      "downstream_same": 26
+    },
+    {
+      "eta": 0.5,
+      "louvain_seed": 10,
+      "Q": 0.9280360310226557,
+      "communities": 19,
+      "retention": 0.8055555555555556,
+      "downstream_retention": 0.7741935483870968,
+      "memberships": 36,
+      "downstream_memberships": 31,
+      "same": 29,
+      "downstream_same": 24
+    },
+    {
+      "eta": 1.0,
+      "louvain_seed": 8,
+      "Q": 0.8965776926066259,
+      "communities": 27,
+      "retention": 0.8055555555555556,
+      "downstream_retention": 0.7741935483870968,
+      "memberships": 36,
+      "downstream_memberships": 31,
+      "same": 29,
+      "downstream_same": 24
+    },
+    {
+      "eta": 1.5,
+      "louvain_seed": 12345,
+      "Q": 0.8710579699712224,
+      "communities": 33,
+      "retention": 0.8055555555555556,
+      "downstream_retention": 0.7741935483870968,
+      "memberships": 36,
+      "downstream_memberships": 31,
+      "same": 29,
+      "downstream_same": 24
+    },
+    {
+      "eta": 2.0,
+      "louvain_seed": 12345,
+      "Q": 0.8476654501137951,
+      "communities": 35,
+      "retention": 0.8055555555555556,
+      "downstream_retention": 0.7741935483870968,
+      "memberships": 36,
+      "downstream_memberships": 31,
+      "same": 29,
+      "downstream_same": 24
+    },
+    {
+      "eta": 3.0,
+      "louvain_seed": 19,
+      "Q": 0.8102716722187027,
+      "communities": 42,
+      "retention": 0.8055555555555556,
+      "downstream_retention": 0.7741935483870968,
+      "memberships": 36,
+      "downstream_memberships": 31,
+      "same": 29,
+      "downstream_same": 24
+    }
+  ],
+  "diagnostics": {
+    "C": 0.4631192501269167,
+    "Cw": 0.0022536853389636246
+  }
+}

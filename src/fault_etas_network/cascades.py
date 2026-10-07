@@ -56,6 +56,8 @@ def cascade_retention(
             continue
         used_sources += 1
         for event in reached:
+            if event == root:
+                continue
             if event >= len(event_to_cell):
                 continue
             community = cell_to_community.get(int(event_to_cell[event]))

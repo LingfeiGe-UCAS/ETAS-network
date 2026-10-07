@@ -1,0 +1,80 @@
+{
+  "best": [
+    {
+      "eta": 0.1,
+      "louvain_seed": 6,
+      "Q": 0.9857241880952808,
+      "communities": 26,
+      "retention": 0.9936724263811146,
+      "downstream_retention": 0.9936585365853658,
+      "memberships": 4109,
+      "downstream_memberships": 4100,
+      "same": 4083,
+      "downstream_same": 4074
+    },
+    {
+      "eta": 0.5,
+      "louvain_seed": 19,
+      "Q": 0.9631056902884984,
+      "communities": 50,
+      "retention": 0.9936724263811146,
+      "downstream_retention": 0.9936585365853658,
+      "memberships": 4109,
+      "downstream_memberships": 4100,
+      "same": 4083,
+      "downstream_same": 4074
+    },
+    {
+      "eta": 1.0,
+      "louvain_seed": 16,
+      "Q": 0.944300868906028,
+      "communities": 69,
+      "retention": 0.7731808225845704,
+      "downstream_retention": 0.7726829268292683,
+      "memberships": 4109,
+      "downstream_memberships": 4100,
+      "same": 3177,
+      "downstream_same": 3168
+    },
+    {
+      "eta": 1.5,
+      "louvain_seed": 14,
+      "Q": 0.9289701714019544,
+      "communities": 75,
+      "retention": 0.7731808225845704,
+      "downstream_retention": 0.7726829268292683,
+      "memberships": 4109,
+      "downstream_memberships": 4100,
+      "same": 3177,
+      "downstream_same": 3168
+    },
+    {
+      "eta": 2.0,
+      "louvain_seed": 12345,
+      "Q": 0.916629221477687,
+      "communities": 84,
+      "retention": 0.8126064735945485,
+      "downstream_retention": 0.8121951219512196,
+      "memberships": 4109,
+      "downstream_memberships": 4100,
+      "same": 3339,
+      "downstream_same": 3330
+    },
+    {
+      "eta": 3.0,
+      "louvain_seed": 16,
+      "Q": 0.8967615258637864,
+      "communities": 94,
+      "retention": 0.8126064735945485,
+      "downstream_retention": 0.8121951219512196,
+      "memberships": 4109,
+      "downstream_memberships": 4100,
+      "same": 3339,
+      "downstream_same": 3330
+    }
+  ],
+  "diagnostics": {
+    "C": 0.4580886944419383,
+    "Cw": 0.0015976328316688407
+  }
+}

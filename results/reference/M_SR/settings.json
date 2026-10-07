@@ -1,0 +1,42 @@
+{
+  "workers": 3,
+  "threads_per_worker": 1,
+  "realizations": 200,
+  "successful_swaps_per_edge": 640,
+  "etas": [
+    0.1,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    3.0
+  ],
+  "louvain_seeds": [
+    12345,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "selection": "Maximum Q, first on ties; never select by retention",
+  "distance_bins": 10,
+  "attempt_multiplier": 1000,
+  "holdout": "Frozen sources and memberships inherited from fixed-sample audit",
+  "networkx": "3.1",
+  "scope": "M_SR only; full and training networks; not proof of uniform mixing"
+}

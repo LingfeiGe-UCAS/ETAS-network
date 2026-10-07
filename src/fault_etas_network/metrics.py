@@ -31,5 +31,4 @@ def summarize_graph(graph: nx.Graph, *, weight: str = "weight") -> dict[str, flo
         "strength_gini": gini(strengths) if len(strengths) else 0.0,
         "clustering_unweighted": float(nx.average_clustering(graph, weight=None)),
         "clustering_weighted": float(nx.average_clustering(graph, weight=weight)),
-        "degree_assortativity": float(nx.degree_assortativity_coefficient(graph)),
     }

@@ -1,5 +1,8 @@
 {
-  "title": "Fault-associated ETAS networks",
+  "title": "Fault-centric ETAS networks",
+  "version": "1.1.0",
+  "access_right": "open",
+  "language": "eng",
   "description": "Code for constructing and analyzing directed weighted earthquake networks by aggregating event-pair ETAS probabilities onto persistent fault-associated spatial cells.",
   "creators": [
     {
@@ -8,9 +11,6 @@
       "orcid": "0009-0002-8792-9447"
     }
   ],
-  "version": "1.0.0",
-  "access_right": "open",
-  "language": "eng",
   "license": "mit",
   "upload_type": "software",
   "keywords": [

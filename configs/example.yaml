@@ -3,15 +3,17 @@ network:
   cell_edge_threshold: 0.0
 community:
   resolutions: [0.5, 1.0]
-  seed: 42
+  seeds: [12345, 1]
 cascade:
   probability_threshold: 0.1
   source_magnitude: 5.0
   minimum_source_community_nodes: 1
+  eligibility_seed: 12345
 temporal_holdout:
   training_fraction: 0.7
 null_models:
   realizations: 2
-  distance_bins: 2
-  swaps_per_edge: 1
+  distance_bins: 1
+  rw_swaps_per_edge: 1
+  sr_swaps_per_edge: 1
   seed: 42

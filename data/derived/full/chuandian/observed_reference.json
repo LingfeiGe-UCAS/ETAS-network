@@ -1,0 +1,44 @@
+{
+  "best": [
+    {
+      "eta": 0.1,
+      "louvain_seed": 1,
+      "Q": 0.9960491406062555,
+      "communities": 78
+    },
+    {
+      "eta": 0.5,
+      "louvain_seed": 11,
+      "Q": 0.9878096157059943,
+      "communities": 113
+    },
+    {
+      "eta": 1.0,
+      "louvain_seed": 12345,
+      "Q": 0.9792253926922813,
+      "communities": 127
+    },
+    {
+      "eta": 1.5,
+      "louvain_seed": 12345,
+      "Q": 0.9708701738988373,
+      "communities": 135
+    },
+    {
+      "eta": 2.0,
+      "louvain_seed": 16,
+      "Q": 0.9626138287479722,
+      "communities": 140
+    },
+    {
+      "eta": 3.0,
+      "louvain_seed": 7,
+      "Q": 0.9463014487380519,
+      "communities": 150
+    }
+  ],
+  "diagnostics": {
+    "C": 0.4104973871351195,
+    "Cw": 0.0042418110284263
+  }
+}

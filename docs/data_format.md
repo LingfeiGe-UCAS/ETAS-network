@@ -10,6 +10,14 @@ Each regional input directory contains three UTF-8 CSV files.
 | `time` | Catalog time in a documented, internally consistent unit |
 | `magnitude` | Event magnitude used for source selection |
 | `cell_id` | Assigned fault-associated cell; use `-1` if unassigned |
+| `fault_distance_km` | Epicentral distance to the nearest mapped fault trace, NOT distance to cell center; required unless --prefiltered is explicitly supplied |
+
+With the paper configuration, distances greater than 18 km set the event's cell_id
+to -1 for network aggregation; exactly 18 km is retained. Event rows, event IDs,
+ETAS probabilities and the chronological split are not deleted or refitted.
+If this column is absent, --prefiltered confirms that upstream processing already
+applied the same cutoff. The software cannot verify that external assertion.
+The code consumes distances; it does not calculate them from raw fault polylines.
 
 ## `event_pairs.csv`
 
